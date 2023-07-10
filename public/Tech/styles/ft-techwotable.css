@@ -1,0 +1,119 @@
+#vg-wo-dash{
+  display: none;
+}
+.cl-list {
+  border-top: 1px solid black;
+}
+.techwo-row{
+  display:grid;
+  grid-template-columns:18% 22% 36% 22%;
+  border-bottom: 1px solid black;
+  height: 125px;
+  align-items: center;
+}
+.techwo-row:hover {
+  background-color: var(--background-base-hover);
+}
+
+.techwo-row-date{
+  max-width:100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: xx-large;
+  padding: 10px;
+  overflow: hidden;
+}
+.techwo-row-contact{
+  text-align: center;
+  font-weight: 525;
+  font-size: medium;
+  overflow: hidden;
+}
+.tech-row-phone {
+  font-weight: 325;
+  font-size: x-small;
+}
+.tech-row-email {
+  font-weight: 325;
+  font-size: xx-small;
+  overflow: hidden;
+}
+.techwo-row-descr{
+  overflow: hidden;
+  overflow-wrap: break-word;
+  font-size: small;
+  text-align: left;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 6; /* number of lines to show */
+           line-clamp: 6;
+   -webkit-box-orient: vertical;
+}
+
+/*.techwo-row-descr:hover {
+  background-color: aliceblue;
+  height:fit-content;
+  position: relative;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  width: 75%;
+}
+.techwo-row:first-of-type>.techwo-row-descr:hover {
+
+}
+
+.techwo-row:last-of-type>.techwo-row-descr:hover {
+  text-position: 200px 200px;
+}*/
+
+.techwo-row-actions{
+  height: 5.5em;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+}
+.techwo-row-actions>div:hover{
+  cursor:pointer;
+}
+.action-button{
+  height: 50%;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#button-delete {
+  background-color: var(--excluded-border);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  filter: drop-shadow(1px -2px 3px rgba(0, 0, 0, 0.5));
+}
+#button-delete:hover {
+  background-color: var(--excluded-border-hover);
+}
+#button-open {
+  background-color: var(--included-border);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5));
+}
+#button-open:hover {
+  background-color: var(--included-border-hover);
+}
+.techwo-row-open {
+  height: 75%;
+  filter: invert();
+}
+.techwo-row-deletes {
+  height: 75%;
+  filter: invert();
+}
+
+
+@media only screen and (min-width: 768px) {
+  .action-button{
+    width: 30%;
+  }
+}

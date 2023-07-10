@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Order Dashboard</title>
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-general.css" />
+    <link rel="stylesheet" href="/Tech/styles/ft-styles.css" />
+    <link rel="stylesheet" href="/Tech/styles/ft-dash.css" />
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-utility.css" />
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-notifiers.css" />
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-floatviews.css" />
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vhc-loadscreen.css" />
+    <link rel="stylesheet" href="/Tech/styles/ft-techwotable.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- TOAST BOX ------>
+    <div id="vg-toast-tr">
+        <div class="vg-note-list">
+        </div>
+    </div>
+    <div class="vhc-load-screen noshow">
+        <div class = "vhc-load-screen-item-cont shadow">
+            <img class="vhc-load-screen-img" src="https://www.vhpportal.com/repo/assets/loading/Loading Circle.gif" />
+            <div class="vhc-load-screen-text">Loading Work Orders</div>
+        </div>
+    </div>
+
+    <div class="vhc-ticket-load-screen noshow">
+        <div class = "vhc-load-screen-item-cont shadow">
+            <img class="vhc-load-screen-img" src="https://www.vhpportal.com/repo/assets/loading/Loading Circle.gif" />
+            <div class="vhc-load-screen-text">Loading Ticket</div>
+        </div>
+    </div>
+
+    <div id="wo-center" class="vg-float-frame">
+        <div class="vg-float-view" title="Open WO">
+            <div>
+                <div class="openwo-header">OPEN WO</div>
+                <div class="openwo-body">
+                    <div class='openwo-area-job'>
+                        <div id="text-light">WO Number:</div>
+                        <input id="openwo-number"/>
+                    </div>
+                    <div class="openwo-buttons">
+                        <div class="flat-action-button" id="submit-search">SUBMIT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img id="vg-float-frame-close" src="https://www.vhpportal.com/repo/assets/icons/cross.png"/>
+    </div>
+    <div id='vg-wo-dash'>
+        <div id='vg-wo-list'></div>
+    </div>
+</body>
+
+<script type="module" src="/Tech/javascript/controllers/vg-dash.js"></script>
+
+</html>

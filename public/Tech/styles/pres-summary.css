@@ -1,0 +1,97 @@
+.wo-present-repair, .wo-present-headers{
+    display:grid;
+    grid-template-columns: 35% 15% 15% 15% 1fr;
+    column-gap: 5px;
+    padding:5px;
+    justify-items: center;
+    text-align: center;
+}
+.wo-present-headers {
+    border-bottom: 1px solid black;
+}
+
+#wo-present-system-invoice>div>div>.wo-present-repair-unapproved {
+    display: none;
+}
+
+.wo-present-repair>:nth-child(-n+4)::before{
+    content:"$";
+}
+.wo-present-repair>:nth-child(1)::before{
+    content:"";
+}
+.system-label {
+    text-decoration: underline;
+}
+
+#rewards-header {
+    height: 10%;
+    width: 100%;
+    display: none;
+}
+
+.present-contract-opt>input {
+    display: none;
+}
+
+/*Pop-up box customization*/
+.complete-container {
+    position:fixed;
+    display: none;
+    left: 20vw;
+    top:25%;
+    z-index: 4;
+    width: 400px;
+    height: 350px;
+    background-color: var(--card-base-light);
+    padding: 10px;
+    border-radius: 5px;
+    filter: var(--drop-shadow);
+}
+
+.container-row {
+    display: grid;
+    padding: 20px;
+    width: 400px;
+    grid-template-columns: 45% 55%;
+}
+.container-row>input{
+    justify-self: end;
+    width: 50px;
+}
+.container-row-item {
+    font-size: medium;
+}
+#final-complete-ticket {
+    width: 250px;
+    margin-left: 60px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.container-header {
+    font-size: large;
+    width: 355px;
+    margin-left: 10px;
+    text-align: center;
+    font-weight: 900;
+    text-decoration:underline;
+}
+
+.container-close {
+    position: absolute;
+    right: 10px;
+    top:10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-close:hover {
+    background-color: #ccc;
+}

@@ -1,0 +1,15 @@
+{
+    "background_color": "purple",
+    "description": "Shows random fox pictures. Hey, at least it isn't cats.",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "https://www.vhpportal.com/repo/assets/icons/email.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "Vogel Dashboard",
+    "short_name": "Vogel Dash",
+    "start_url": "/"
+}

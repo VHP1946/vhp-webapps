@@ -1,0 +1,471 @@
+.present-full-cont{
+    position: fixed;
+    top: 40px;
+    height: calc(100vh - 40px);
+    overflow: auto;
+    width: 100vw;
+    left: -5000px;
+    background-color: var(--background-base);
+    z-index: 26;
+}
+.present-header-cont{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.wo-info-description{
+    grid-column: 1 / span all;
+}
+.wo-present-contract-cont {
+    border: 2px solid var(--vogel-blue);
+    border-radius: 8px;
+}
+.present-bottom-cont{
+    position: relative;
+}
+.present-bottom-cont input {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+#wo-present-repair-cont>:nth-last-child(3){
+    font-weight: bold;
+}
+#wo-present-repair-cont>:nth-last-child(2){
+    font-style: oblique;
+}
+#wo-present-repair-cont>:last-child{
+    font-weight: bold;
+}
+#header-logo{
+    width: 100%;
+    grid-column: 1 / 6;
+    margin-bottom: 10px;
+}
+.wo-contact-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 15%);
+}
+.present-info-id,
+.present-info-custcode{
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.present-info-contactname,
+.present-info-street{
+    grid-column: 2 / 5;
+}
+.present-info-cityzip,
+.present-info-email{
+    grid-column: 2 / 4;
+}
+.present-info-contactphone{
+    grid-column: 2 / 6;
+    width: max-content;
+}
+.present-label-salesrep{
+    grid-column: 2;
+}
+.present-info-state{
+    display: none;
+}
+.present-info-custcode{
+    grid-column: 5 / 6;
+}
+.present-info-id{
+    grid-column: 5 / 6;
+}
+.present-info-descr{
+    display: none;
+}
+.present-contract-name, .wo-present-membership {
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    border: 0px;
+    border-bottom: 1px solid var(--contract-color);
+    color: var(--contract-color);
+    background-color: transparent;
+}
+.wo-present-membership{
+    grid-column:3;
+}
+.wo-present-contract-monthly{
+    grid-column:3;
+}
+[id*="present-contract-add"]::before{
+    content:"$";
+}
+.present-contract-monthly::before{
+    content:"$";
+}
+.monthly-tag{
+    font-weight: bold;
+}
+#enhance-tag{
+    padding-left: 15px;
+    padding-top: 10px;
+    border-bottom: 1px solid var(--contract-color);
+    font-style:italic;
+    font-weight: bold;
+    color: var(--contract-color);
+}
+.present-contract-opt {
+    display: grid;
+    grid-template-columns: 1fr 45px 40px;
+    column-gap: 10px;
+    text-align: right;
+    padding: 2.5px 15px;
+}
+.present-contract-opt>:nth-child(2){
+    text-align: center;
+    place-self: center stretch;
+}
+/*Contract input*/
+.present-contract-opts>div {
+    line-height: 1.5em;
+    font-size: medium;
+}
+.present-contract-opts>div>input {
+    border: 0;
+    padding: 2px 5px;
+    border: 1px solid #ccc;
+    position: relative;
+    background-color: var(--card-base-light);
+    border-radius: 5px;
+    color: rgb(50,50,50);
+}
+.present-contract-opts>div>input:focus {
+    outline: none;
+    background-color: #ccc;
+}
+#wo-contract-appr{
+    place-self: center center;
+}
+.wo-present-headers{
+    font-weight:bold;
+    padding-bottom:5px;
+    border-bottom: 1px solid black;
+}
+.wo-present-headers,
+.wo-present-repair,
+.button-row{
+    display:grid;
+    grid-template-columns: 35% 15% 15% 15% 1fr;
+    column-gap: 5px;
+    padding:5px;
+    justify-items: center;
+    text-align: center;
+}
+.wo-present-repair>:nth-child(-n+4)::before{
+    content:"$";
+}
+#wo-present-membership::before {
+    content: '';
+}
+.wo-present-repair>:nth-child(1)::before{
+    content:"";
+}
+.wo-present-repair-unapproved div{
+    color: gray;
+}
+.wo-present-repair-unapproved div:first-child{
+    text-decoration: line-through;
+}
+.wo-present-repair-unapproved div:last-child{
+    font-style: oblique;
+}
+/*Return for repair*/
+.wo-present-repair-unapproved-return div{
+    color: darkslategray;
+}
+.wo-present-repair-unapproved-return div:first-child{
+    text-decoration:oblique;
+}
+.wo-present-repair-unapproved-return div:last-child{
+    font-style: oblique;
+}
+/*Approval text customization*/
+.apprvdiv:hover {
+    cursor: pointer;
+    background-color: #ccc;
+}
+.apprvdiv.NO {
+    color: var(--vogel-red);
+    font-weight: 650;
+}
+
+.apprvdiv.YES {
+    color: var(--vogel-blue);
+    font-weight: 650;
+}
+
+.apprvdiv.RETURNFOR {
+    color: var(--vogel-blue);
+    font-weight: 650;
+}
+/*Style for whole repair list container*/
+#wo-present-systems {
+    max-height: 200px;
+    overflow-y: overlay;
+    border-bottom: 1px solid black;
+}
+/*#wo-present-systems::-webkit-scrollbar {
+    display: none;
+}*/
+.wo-present-system{
+    margin-bottom: 10px;
+}
+.wo-present-system >:nth-child(1){
+    font-weight:bold;
+}
+.wo-present-system-repairs>:nth-child(odd){
+    background-color: var(--row-color);
+}
+
+/*Price Level popup*/
+#price-select:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.mini-popup {
+    position: absolute;
+    display: none;
+    background-color: var(--card-base-light);
+    left: 38.25%;
+    width: 120px;
+    height: 54px;
+    align-items: center;
+    padding: 05px;
+    border-radius: 5px;
+    filter: var(--drop-shadow);
+    top: 0px;
+    grid-template-columns: 75% 25%;
+}
+
+.mini-popup>div {
+    font-size: 18px;
+}
+.mini-popup>input {
+    width: 25px;
+    height: 25px;
+}
+
+#wo-present-memprice-today{
+    color: var(--member-price)
+}
+#wo-present-repair-cont {
+    grid-column: 1 / span all;
+    margin: 5px;
+}
+#wo-present-repair-cont::after{
+    content: "*Rewards Membership Subscription fees to be charged to your credit card monthly. All benefits apply with continued Membership, including in home Membership Service next season!";
+    font-size: .75em;
+    margin-top: 5px;
+    float: right;
+}
+#wo-setup-sys{
+    grid-column: 1 / span all;
+    grid-row:1;
+}
+
+#wo-setup-repair input{
+    margin-bottom:5px;
+}
+.button-row>div{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--BCE-green);
+    color: var(--text-light);
+}
+.button-row>div:hover{
+    cursor: pointer;
+    opacity: .4;
+}
+.wo-present-signature{
+    width:50%;
+    position: relative;
+    left: -5000px;
+    transition: left 0.25s;
+}
+.signature-pad{
+    background-color: lightgrey;
+    height: 100px;
+    width: 150%;
+    border-radius: 10px;
+}
+.signature-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*Styling for save/clear buttons.*/
+.signature-buttons>div {
+    border-radius: 10px;
+}
+
+.present-contract-name {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: var(--vogel-red);
+    background-color: var(--card-base-light);
+    border-radius: 5px;
+}
+
+/*Member column colors*/
+@keyframes textshine {
+    0%   {color: rgb(255, 63, 63);}
+    25%  {color: rgb(47, 162, 255);}
+    50%  {color: rgb(255, 63, 63);}
+    100% {color: rgb(47, 162, 255);}
+}
+@keyframes textshinedark {
+    0%   {color: rgb(0, 0, 0);font-weight: 600;}
+    25%  {color: rgb(50, 50, 50);font-weight: 700;}
+    50%  {color: rgb(0, 0, 0);font-weight: 700;}
+    100% {color: rgb(50, 50, 50);font-weight: 600;}
+}
+@keyframes bgshine {
+    0%   {background-color: rgb(255, 204, 63);}
+    25%  {background-color: rgb(47, 162, 255);}
+    50%  {background-color: rgb(255, 63, 63);}
+    100% {background-color: rgb(201, 255, 165);}
+}
+.member-savings,.member-month,.member-month,#member-item-label,#member-label,#member-blank-column, .member-price {
+    /*no rave animation sad :(
+    animation-name: bgshine;
+    animation-duration: 0.25s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;*/
+}
+.memlevel-label {
+    line-height: 2.75em;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    animation-name: textshine;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+#member-label {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.wo-present-headers>:nth-child(3) {
+    color: var(--member-column-text);
+    background-color: var(--member-column-bg);
+    width: 100%;
+    height: calc(100% + 5px);
+}
+.wo-present-repair>:nth-child(3) {
+    color: var(--member-column-text);
+    background-color: var(--member-column-bg);
+    width: 100%;
+    height: calc(100% + 15px);
+}
+#member-item-label {
+    margin-left: 0vw;
+}
+
+.member-price {
+    margin-top: -5px;
+    font-weight: 650;
+}
+.member-month {
+    height: 100% !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.memlevel-label {
+    background-color: transparent !important;
+}
+.present-contract-opt>:nth-child(3)::before {
+    content: "$";
+}
+
+/*System label div in repair table.*/
+#system-label-group {
+    display: grid;
+    grid-template-columns: calc(50vw + 5px) 50%;
+}
+.system-label {
+    text-decoration: underline;
+}
+#member-blank-column {
+    background-color: var(--member-column-bg);
+    height: calc(100% + 5px);
+    width: 14.65vw;
+}
+
+.presentation-title-header {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(15 70 119);
+    color:#fff;
+    width: 100%;
+    border-radius:10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .present-full-cont {
+        height: calc(100vh - 40px);
+    }
+    .present-contract-opts>div {
+        font-size: large;
+    }
+    .present-contract-opts>div>input {
+        padding: 1px 5px;
+    }
+    .signature-pad {
+        width: 100%;
+    }
+}
+/*Hide scrollbars*/
+.present-full-cont::-webkit-scrollbar {
+    display: none;
+}
+
+/*Fix styling issues*/
+.ignore {
+    color: transparent;
+}
+
+/*Delete the $*/
+#wo-present-systems::before {
+    content:"" !important;
+}
+
+#wo-present-systems::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+}
+  
+#wo-present-systems::-webkit-scrollbar-button {
+    display: none;
+}
+  
+#wo-present-systems::-webkit-scrollbar-track {
+    background-color: #00000000;
+}
+  
+#wo-present-systems::-webkit-scrollbar-track-piece {
+    background-color: #00000000;
+}
+  
+#wo-present-systems::-webkit-scrollbar-thumb {
+    background-color: #000000c9;
+    border: 1px solid #ffffff40;
+    border-radius: 4px;
+}

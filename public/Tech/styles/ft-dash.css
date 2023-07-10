@@ -1,0 +1,101 @@
+/* App Dock */
+#vhc-app-dock{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 80%;
+    display: grid;
+}
+.vhc-app{
+    background-color: var(--card-base-light);
+    text-align: center;
+    font-weight: bold;
+    min-width: 125px;
+    height: 125px;
+    margin: auto;
+    border-radius: 10px;
+    filter: var(--drop-shadow);
+}
+.vhc-app>img{
+    width: 65%;
+    padding: 5px;
+}
+.vhc-app:hover{
+    cursor: pointer;
+}
+
+/* WO PopUp */
+.openwo-header{
+    background-color: var(--BEE-blue);
+    color: var(--text-light);
+    width:100%;
+    height: 2em;
+    text-align:center;
+    line-height: 2em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+[class*='openwo-area-']{
+    display: grid;
+    grid-template-columns: repeat(2, 125px);
+    row-gap: 5px;
+    padding: 5px;
+}
+.openwo-area-job>div {
+	align-self: center;
+	font-size: 17.5px;
+	font-weight: 550;
+}
+.openwo-body {
+	padding: 5px;
+}
+.vg-float-view>div:first-child {
+	border-bottom-left-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
+}
+#openwo-number {
+	border: 0; 
+    padding: 5px 10px;
+    margin: 1px;
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: var(--card-base-light);
+    /*border: 1px solid rgb(250, 188, 188);
+    background-color: rgb(218, 165, 165);
+    color: rgb(119, 66, 66); */
+    border-radius: 5px;
+}
+#openwo-number:focus{
+    outline: none;
+    background-color: #ccc;
+    /*background-color: rgb(250, 188, 188);*/
+}
+.openwo-buttons{
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#submit-search {
+    border-radius: 5px;
+    filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5));
+    width: 5em;
+    height: 2em;
+    line-height: 1.7em;
+}
+#search-wo {
+    display:none;
+}
+
+@media only screen and (min-width: 768px) {
+    #vhc-app-dock{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (min-width: 1024px) {
+    #vhc-app-dock{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

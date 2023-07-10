@@ -1,0 +1,18 @@
+/*  Local Store
+    Will hold the websites
+*/
+
+
+
+/*SERVICE TICKET /////////////////////////////////////////////////////////
+*/
+var wolstore = {
+  toloadwo:'FT-toloadwo',
+  lastwo:'FT-lastwo',
+  localwos:'FT-localwos'
+}
+//////////////////////////////////////////////////////////////////////////
+
+export{
+  wolstore
+}

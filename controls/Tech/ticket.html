@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Order Editing</title>
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-general.css" />
+    <link rel="stylesheet" href="/Tech/styles/ft-ticket.css" />
+	<link rel="stylesheet" href="/Tech/styles/ft-systempresentation.css" />
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-tables.css" />
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-utility.css" />
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-notifiers.css" />
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-floatviews.css" />
+
+    <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vhc-loadscreen.css" />
+    <link rel="stylesheet" href="/Tech/styles/ft-techwotable.css" />
+    <link rel="stylesheet" href="/Tech/styles/ft-presentation.css" />
+    <link rel="stylesheet" href="/Tech/styles/ft-checklists.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Brian Kremmel</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">55;#Brian Kremmel</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+    <!-- TOAST BOX ------>
+    <div id="vg-toast-tr">
+        <div class="vg-note-list">
+        </div>
+    </div>
+    <!------------------->
+    <div id="ticket-build-container">
+    </div>
+
+    <div class="vhc-save-load-screen noshow">
+        <div class = "vhc-load-screen-item-cont shadow">
+            <img class="vhc-load-screen-img" src="https://www.vhpportal.com/repo/assets/loading/Loading Circle.gif" />
+            <div class="vhc-load-screen-text">Saving</div>
+        </div>
+    </div>
+    <!-- Mini-Page Table Container-->
+    <div class="min-page-cont" style="display:none">
+        <div class="min-page-menu">
+            <div class="min-page-hide-button sm-action-button">X</div>
+            <div class="min-page-minimize-button sm-action-button">-</div>
+        </div>
+        <div class="min-page-view">
+            <div class="frbook-list vg-gentable">
+
+            </div>
+        </div>
+    </div>
+
+    <!--BLOCK TO HOLD DATALIST-->
+    <div>
+        <datalist id="flatrate-book-search-list">
+            <option>Task Code</option>
+            <option>Task Description</option>
+        </datalist>
+        <datalist id="flatrate-book-list">
+            <option>RES</option>
+            <option>COM</option>
+        </datalist>
+        <datalist id="flatrate-book-pl-list">
+          <option>STA</option>
+          <option>AHR</option>
+          <option>CLA</option>
+          <option>PRE</option>
+          <option>ULT</option>
+        </datalist>
+        <datalist id="contract-name-list">
+            <option>CLASSIC</option>
+            <option>PREMIUM</option>
+            <option>ULTIMATE</option>
+        </datalist>
+    </div>
+
+	<div class = "system-summary-cont">
+
+	</div>
+	<div id = "help-box-cont">
+		<div class = "card">
+			<div class = "card-menubar">
+				<div class = "card-title">Checklist Calculation Guide</div>
+				<div class = "card-close" id = "help-box-close">X</div>
+			</div>
+			<div class = "content">
+				<div id="help-information">
+					<div class = "calcs-info-title">Available Calculations:</div>
+					<div class = "help-calculations-list">
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">Temperature Drop:</div>
+							<div class="cl-calc-help-fields">Dry Bulb - Entering <span class="cl-help-loc">(Cooling > Indoor > Cooling)</span>, Dry Bulb Leaving <span class="cl-help-loc">(Cooling > Indoor > Cooling)</span></div>
+						</div>
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">System Static Pressure:</div>
+							<div class="cl-calc-help-fields">Supply Air Static <span class="cl-help-loc">(System > Indoor > Airflow)</span>, Return Air Static <span class="cl-help-loc">(System > Indoor > Airflow)</span></div>
+						</div>
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">Blower Motor Operational:</div>
+							<div class="cl-calc-help-fields">Blower Amp Rated <span class="cl-help-loc">(System > Indoor > Airflow)</span>, Blower Amp Actual <span class="cl-help-loc">(System > Indoor > Airflow)</span></div>
+						</div>
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">Scored CFM:</div>
+							<div class="cl-calc-help-fields">Rated CFM <span class="cl-help-loc">(System > Indoor > Airflow)</span>, Actual CFM <span class="cl-help-loc">(System > Indoor > Airflow)</span></div>
+						</div>
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">Compressor Operational Score:</div>
+							<div class="cl-calc-help-fields">Compressor Amps Rated <span class="cl-help-loc">(Cooling > Outdoor > Cooling)</span>, Compressor Amps Actual <span class="cl-help-loc">(Cooling > Outdoor > Cooling)</span></div>
+						</div>
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">Cooling: Actual Capacity:</div>
+							<div class="cl-calc-help-fields">
+								Wet Bulb - Entering <span class="cl-help-loc">(Cooling > Indoor > Cooling)</span>, 
+								Wet Bulb - Leaving <span class="cl-help-loc">(Cooling > Indoor > Cooling)</span>, 
+								Dry Bulb - Entering <span class="cl-help-loc">(Cooling > Indoor > Cooling)</span>, 
+								Dry Bulb - Leaving <span class="cl-help-loc">(Cooling > Indoor > Cooling)</span>, 
+								Temperature <span class="cl-help-loc">(System > Outdoor > Info)</span>, 
+								Cooling: Rated Capacity <span class="cl-help-loc">(System > Outdoor > Info)</span>
+							</div>
+						</div>
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">Cooling: Lost Capacity:</div>
+							<div class="cl-calc-help-fields">
+								Cooling: Rated Capacity <span class="cl-help-loc">(Cooling > Indoor > Cooling)</span>, 
+								Cooling: Actual Capacity <span class="cl-help-loc">(Calculated)</span>
+							</div>
+						</div>
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">Refrigerant Operation (SH):</div>
+							<div class="cl-calc-help-fields">
+								Target Superheat <span class="cl-help-loc">(Cooling > Outdoor > Cooling)</span>, 
+								Actual Superheat <span class="cl-help-loc">(Cooling > Outdoor > Cooling)</span>
+							</div>
+						</div>
+						<div class="checklist-calculation-item">
+							<div class="cl-calc-help-title">Refrigerant Operation (SC):</div>
+							<div class="cl-calc-help-fields">
+								Target Subcooling <span class="cl-help-loc">(Cooling > Outdoor > Cooling)</span>, 
+								Actual Subcooling <span class="cl-help-loc">(Cooling > Outdoor > Cooling)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="action-row">
+					<div id = "open-support-form" class="action-button">Submit Support Ticket</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="module" src="/Tech/javascript/controllers/vg-ticket.js"></script>
+
+</html>

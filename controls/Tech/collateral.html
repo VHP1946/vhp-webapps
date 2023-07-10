@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+      <link rel="stylesheet" href="/Tech/styles/invoice.css" crossorigin="anonymous"/>
+      <link rel="stylesheet" href="/Tech/styles/check-summary.css" crossorigin="anonymous" />
+      <link rel="stylesheet" href="/Tech/styles/pres-summary.css"  crossorigin="anonymous"/>
+	  <link rel="stylesheet" href="/Tech/styles/ft-systempresentation.css" />
+      <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-general.css"  crossorigin="anonymous"/>
+      <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-utility.css"  crossorigin="anonymous"/>
+      <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vg-notifiers.css"  crossorigin="anonymous"/>
+      <link rel="stylesheet" href="/Tech/styles/presentation-print.css" crossorigin="anonymous"/>
+      <link rel="stylesheet" href="https://www.vhpportal.com/repo/css/vhc-loadscreen.css"  crossorigin="anonymous"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+      <div id = "vg-toast-tr">
+        <div class = "vg-note-list"></div>
+      </div>
+      <div class="vhc-email-load-screen noshow">
+        <div class = "vhc-load-screen-item-cont shadow">
+            <img class="vhc-load-screen-img" src="https://www.vhpportal.com/repo/assets/loading/Loading Circle.gif" />
+            <div class="vhc-load-screen-text">Emailing invoice to customer</div>
+        </div>
+    </div>
+      <div class = "button-container">
+        <button id="print-collateral" class = "flat-action-button"><img src="https://www.vhpportal.com/repo/assets/icons/download.png" title = "Download Invoice"/></button>
+        <input id = "email-input" class = "vg-text-input" placeholder="Enter Email" type="email"></input>
+        <button id="email-collateral" class = "flat-action-button"><img src="https://www.vhpportal.com/repo/assets/icons/email.png" title = "Email Invoice"/></button>
+        <button id = "payment-card" class = "flat-action-button"><img src="https://www.vhpportal.com/repo/assets/icons/creditcard.png" title = "Open Card Payment"/></button>
+        <button id = "complete-ticket" class = "flat-action-button"><img src="https://www.vhpportal.com/repo/assets/icons/cross.png" title = "Complete Ticket"/></button>
+		<button id = "refresh-descr" class = "flat-action-button"><img src="https://www.vhpportal.com/repo/assets/icons/refresh.png" title = "Refresh Description"/></button>
+      </div>
+      <div class = "complete-container" id = "tickcompcont">
+        <div class = "container-header">COMPLETION CHECKLIST</div>
+        <div class = "container-close">X</div>
+        <div class = "container-row" id = "emailed">
+          <div class = "container-row-item" id = "email-text">Invoice Emailed: </div>
+          <input class = "container-row-item" type = "checkbox" id = "email-check"/>
+        </div>
+        <div class = "container-row" id = "downloaded">
+          <div class = "container-row-item" id = "download-text">Invoice Downloaded: </div>
+          <input class = "container-row-item" type = "checkbox" id = "download-check"/>
+        </div>
+        <div class = "container-row" id = "downloaded">
+          <div class = "container-row-item" id = "sold-text">Payment Method: </div>
+          <select class = "container-row-item" id = "paymentmethod-select">
+            <option value="" disabled selected>Select Payment Method</option>
+            <option value = "creditcard">Credit Card</option>
+            <option value = "cash">Cash</option>
+            <option value = "check">Check</option>
+            <option value = "nopaymentcollected">No payment collected</option>
+          </select>
+        </div>
+        <button id = "final-complete-ticket"class = "flat-action-button">COMPLETE AND CLOSE TICKET</button>
+      </div>
+    </body>
+    <script type="module" src="/Tech/javascript/controllers/collateral/collateral.js"></script>
+</html>

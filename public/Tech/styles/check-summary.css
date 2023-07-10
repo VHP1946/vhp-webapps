@@ -1,0 +1,173 @@
+body{
+    font-size: .75em;
+}
+.summary-header{
+    text-align: center;
+}
+.wo_street,
+.wo_cityzip{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#header-logo{
+    width: 100%;
+    padding: 20px
+}
+#title-header{
+    font-weight: bold;
+    font-size: 3em;
+    color: var(--vogel-blue);
+}
+.summary-body{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+[class*='summary-section-']{
+    border: 1px solid black;
+}
+[class*="section-header-"]{
+    color: var(--text-light);
+    text-align: center;
+}
+.summary-section-info {
+    border-top-left-radius: 5px;
+}
+.summary-section-airflow {
+    border-top-right-radius: 5px;
+}
+.section-header-sys{
+    background-color: var(--BCE-green);
+    border-top-left-radius: 5px;
+}
+.section-header-air{
+    background-color: rgb(175, 10, 175);
+    border-top-right-radius: 5px;
+}
+.section-header-cool{
+    background-color: var(--vogel-blue);
+}
+.section-header-heat{
+    background-color: var(--vogel-red);
+}
+.section-header-access{
+    background-color: goldenrod;
+}
+.section-header-descr{
+    background-color: black;
+}
+.part-header{
+    font-weight: bold;
+    padding: 3px;
+    text-decoration: underline;
+    text-align: center;
+}
+.section-cont{
+    padding: 5px;
+}
+.checklist-item{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#wo-present-system-invoice>div>div.wo-present-system-repairs > div>div{
+    background-color: transparent;
+}
+#wo-present-system-invoice>div>div>div{
+    background-color: transparent;
+}
+.invoice-descbox>.wo-present-headers>div {
+    background-color: transparent !important;
+}
+/*Button container*/
+.button-container {
+    height: 40px;
+    z-index: 50;
+    background-color: var(--titlebar-bg);
+    filter:var(--drop-shadow)
+    
+}
+/*Print/Email button*/
+.button-container>button{
+    border-radius: 5px;
+    border-color: transparent;
+    height: 35px;
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: transparent;
+    padding-top: 5px;
+}
+.button-container>button>img{
+    height: 24px;
+    width: 24px;
+    filter: invert();
+}
+#refresh-descr:hover,
+#complete-ticket:hover,
+#payment-card:hover,
+#email-collateral:hover,
+#print-collateral:hover {
+    filter: invert();
+    background-color: transparent;
+}
+#email-input {
+    padding: 0px;
+    width: 300px;
+    height: 30px;
+    bottom: 7px;
+}
+
+.checklist-item:nth-child(odd){
+    background-color: #ccc;
+}
+
+@media print{
+    #system-label-group {
+        display: grid;
+        grid-template-columns: 51.4% 50% !important;
+    }
+    #member-blank-column {
+        width: 108px !important;
+    }
+    .complete-container {
+        display: none !important;
+    }
+    .button-container {
+        display: none;
+    }
+    #header-logo{
+        page-break-inside: avoid; page-break-before: always;
+    }
+    .pagebreak {
+        page-break-after: always;
+    }
+    .present-full-cont {
+        overflow:visible;
+        position: static;
+    }
+    @page{
+        size: 8.5in 11in;
+    }
+    .part-header{
+        font-weight: bold;
+        padding: 1.5px;
+    }
+    .checklist-item{
+        display: grid;
+        grid-template-columns: 60% 25% 10%;
+    }
+    .wo_desc {
+        font-size: x-small;
+    }
+    /*
+    *Can use below to add top/bottom borders to repair cutoff, however cutff number changes depending on height of repair item
+    */
+    /*#wo-present-system-summary>div>.wo-present-system-repairs>:nth-child(22) {
+        page-break-after: avoid;
+        border-bottom: 3px double black;
+    }
+    #wo-present-system-summary>div>.wo-present-system-repairs>:nth-child(23) {
+        page-break-before: always;
+        border-top: 3px double black;
+    }*/
+}

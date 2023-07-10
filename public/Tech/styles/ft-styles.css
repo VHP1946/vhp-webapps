@@ -1,0 +1,50 @@
+/* Root styling file that will hold the layout structure */
+:root{
+    font-size: 120%;
+}
+input,textarea{
+    font-size: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+.vg-deleter{
+    height:20px;
+    width:20px;
+}
+.vg-deleter:hover{
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .wo-sys {grid-template-columns: 25px repeat(5, 1fr);}
+    :root{
+        font-size: 120%;
+    }
+    input,textarea{
+        font-size: 100%;
+    }
+}
+@media only screen and (min-width: 1300px) {
+    :root,input,textarea{
+        font-size: unset;
+    }
+}
+
+@media print{
+    *{ color-adjust: exact;  -webkit-print-color-adjust: exact;}
+    input{border:0;}
+    .vg-utilcont-toggle{display: none;}
+    #video-option-buttons>div{visibility: hidden;}
+    #video-membership{
+        background-color: var(--contract-color);
+        color: white;
+    }
+}

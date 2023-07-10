@@ -1,0 +1,212 @@
+.client-grid{
+  display: grid;
+  grid-template-columns: repeat(10, minmax(25px,1fr));
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: var(--back-color);
+  border-radius: 10px;
+  place-items: center center;
+  border: 1px solid #e4e4e4;
+}
+#call-header{
+  grid-column: 2 / 11;
+  font-size: 1.25em;
+  font-style: oblique;
+  font-weight: bold;
+  place-self: center end;
+  text-align: right;
+}
+#home-link{
+  grid-column: -1;
+  margin:10px;
+}
+#header-logo{
+  width: 250px;
+}
+.client-icon{
+  margin:5px;
+}
+/* Video Stuff */
+#video-wrapper{
+  position: relative;
+  padding-bottom: 56.25%;
+  left: calc(5% - 2px);
+  height: 0;
+  margin-bottom: 5px;
+}
+#video-screen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+#video-gallery-buttons{
+    grid-column: 1 / span all;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+}
+#video-gallery-buttons>div:hover{
+  background-color: var(--vogel-blue);
+  color: white;
+}
+#video-gallery-buttons>div:hover>a{
+  color: white;
+}
+/*Curves for hovers on video buttons*/
+#video-gallery-buttons div:first-child{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#video-gallery-buttons div:nth-child(2){
+  border-bottom-left-radius: 5px;
+}
+#video-gallery-buttons div:last-child{
+  border-right:0px;
+  border-bottom-right-radius: 5px;
+}
+.video-button{
+  border-top:1px solid black;
+  border-right:1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  height: 80px;
+  font-size: small;
+  text-align: center;
+}
+.video-button-selected{
+  background-color: var(--vogel-red);
+  color: white;
+}
+#video-john{
+  grid-column: 1 / span all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  height: 50px;
+  text-align: center;
+}
+#review-cont{
+  bottom: 0;
+  right: 10px;
+  left: 10px;
+  display: block;
+}
+#review-tag{
+  padding-top: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+.review-icons {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 15% 15%;
+}
+.review-icon{
+  margin:10px 0px;
+}
+
+.footer {
+  background-image:url("https://www.vogelheating.com/assets/footer/footer-alt.jpg");
+  background-position: center;
+  background-size: contain;
+  height: 12.5vh;
+  width: 100vw;
+  position:fixed;
+  bottom: 0;
+  left:0;
+}
+
+.logo {
+  height: 10vh;
+}
+
+#titlebar {
+  height: 40px;
+  background-color: var(--titlebar-bg);
+  filter: var(--drop-shadow);
+  width: 100vw;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.home-button-cont {
+  height: 40px;
+  background-color: aqua;
+  align-content: center;
+  justify-content: center;
+}
+
+#return-home {
+  max-height: 32.5px;
+}
+
+#client-bar {
+  height: 20vh;
+}
+
+#footer-img {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+.contents {
+  height: calc(100vh - 40px - 20vh);
+  display: grid;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/*Landscape customizations.*/
+@media only screen and (min-width: 768px) {
+  #titlebar {
+    position: fixed;
+    viewport-fit:contain;
+    
+  }
+  .footer {
+    display: none;
+  }
+  .contents {
+    height: calc(100vh - 40px);
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  #client-bar {
+    width: 95%;
+    height: 40vh;
+  }
+  
+  #call-header {
+    font-size: 1.5em;
+  }
+  .video-button {
+    font-size: medium;
+  }
+
+  #video-wrapper{
+    left: calc(25% - 2px);
+    height: 0%;
+  }
+  #video-screen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+}

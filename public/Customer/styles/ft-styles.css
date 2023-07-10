@@ -1,0 +1,175 @@
+:root {
+            --vogel-blue: rgb(33, 57, 130);
+            --vogel-red: rgb(230,0,0);
+            --row-color: rgb(240,240,255);
+            --member-price: rgb(0,150,0);
+            --back-color: white;
+            --contract-color: #213982;
+            --present-back-color: rgb(245,245,245);
+            --highlight-color: rgb(255, 129, 129);
+            --titlebar-bg: rgb(6, 42, 73);
+            --drop-shadow: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5));
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            user-select: none;
+        }
+        body{
+            background-color: var(--present-back-color);
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            height: calc(100vh - 20px);
+            display: flex;
+            flex-flow: column;
+            margin-top: 50px;
+            overflow-x: hidden;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+          }
+        .two-col-grid{
+          display:grid;
+          grid-template-columns: 1fr 3fr 1fr;
+          padding: 5px;
+          margin-bottom: 5px;
+          background-color: var(--back-color);
+          border-radius: 10px;
+          border: 2px solid black;
+
+        }
+        #wo-header-cont{
+            flex: 0 1 auto;
+            margin-bottom: 5px;
+            background-color: var(--back-color);
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+        /* for Mobile Phones */
+        .twelve-col-grid{
+            display: grid;
+            grid-template-columns: minmax(100px, 1fr) repeat(5, 1fr);
+            column-gap:5px;
+            row-gap:5px;
+            padding: 5px;
+        }
+        .wo-sys {
+            width:calc(100% - 20px);
+            display: inline-grid;
+            grid-template-columns: 25px repeat(3, 1fr);
+            padding: 5px;
+            margin: 5px;
+            background-color: var(--back-color);
+            border:2px solid rgba(0,0,0,0);
+        }
+        #wo-present-contract-cont {
+            grid-column: 1 / span all;
+            grid-row: 5;
+            padding:0px 0px 10px 10px;
+            border: 2px solid var(--contract-color);
+            border-radius: 8px;
+        }
+        /* for Desktop */
+        @media only screen and (min-width: 768px) {
+            .twelve-col-grid{grid-template-columns: minmax(100px, 1fr) repeat(11, 1fr);}
+            .wo-sys {grid-template-columns: 25px repeat(5, 1fr);}
+            #wo-present-contract-cont{
+                grid-column: 7 / 13;
+                grid-row:1 / 6;
+            }
+        }
+        @media only screen and (min-width: 1024px) {
+            #wo-present-contract-cont{
+                grid-column: 9 / 13;
+                grid-row:1 / 6;
+            }
+        }
+        @media only screen and (min-width: 1440px) {
+            #wo-present-contract-cont{
+                grid-column: 11 / 13;
+                grid-row:1 / 6;
+            }
+        }
+        .vg-deleter{
+            height:20px;
+            width:20px;
+        }
+        .vg-deleter:hover{
+            cursor: pointer;
+        }
+        #wo-present-repair-cont {
+            grid-column: 1 / span all;
+            margin: 5px;
+        }
+        #wo-present-repair-cont::after{
+            content: "*Rewards Membership Subscription fees to be charged to your credit card monthly. All benefits apply with continued Membership, including in home Membership Service next season!";
+            font-size: .75em;
+            margin-top: 5px;
+            float: right;
+        }
+        #wo-setup-sys{
+            grid-column: 1 / span all;
+            grid-row:1;
+        }
+
+        #wo-setup-repair input{
+            margin-bottom:5px;
+        }
+        .vg-utilcont-top-info{
+            background-color: white;
+            border: 2px solid black;
+            border-top: 0px;
+            border-radius: 0px 0px 10px 10px;
+            display: flex;
+            justify-content: space-evenly;
+            filter: drop-shadow(3px 3px 5px black);
+        }
+        .wo-nav-icon{
+            height:40px;
+            width:40px;
+            padding:10px 15px;
+        }
+        .wo-ctrl-icon{
+            height: 20px;
+            width: 20px;
+            padding: 0px 15px;
+            cursor: pointer;
+        }
+        #wo-action-buttons{
+            grid-column: 3 / 7;
+            grid-row:2;
+          }
+        .wo-ctrl-icon:hover, .wo-nav-icon:hover{
+            cursor: pointer;
+            filter:drop-shadow(2px 2px 3px var(--vogel-blue));
+        }
+       
+          #wo-ticket-header{
+            grid-column: 1 / 5;
+            grid-row: 5 / 6;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--vogel-blue);
+            text-align: center;
+        }
+
+@media print{
+    *{ color-adjust: exact;  -webkit-print-color-adjust: exact;}
+    .twelve-col-grid{grid-template-columns: minmax(100px, 1fr) repeat(11, 1fr);}
+    #wo-action-buttons{display: none;}
+    #vg-top-toggle{display: none;}
+    #wo-save{display: none;}
+    input{border:0;}
+    #wo-present-contract-cont{
+        grid-column: 5 / 13;
+        grid-row: 1 / 6;
+    }
+    .vg-utilcont-toggle{display: none;}
+    #video-option-buttons>div{visibility: hidden;}
+    #video-membership{
+        background-color: var(--contract-color);
+        color: white;
+    }
+}
