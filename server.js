@@ -2,7 +2,7 @@ const wserver=require('vhp-webserver');
 const path = require('path');
 
 let config = {
-    port:4001,
+    port:4000,
     resources:{
         react:true,
         root:path.join(__dirname,'resources')
