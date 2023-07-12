@@ -1,0 +1,23 @@
+{
+  "name": "vhp-webapps",
+  "version": "1.0.0",
+  "description": "public facing web apps",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VHP1946/vhp-webapps.git"
+  },
+  "author": "cmv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VHP1946/vhp-webapps/issues"
+  },
+  "homepage": "https://github.com/VHP1946/vhp-webapps#readme",
+  "dependencies": {
+    "vhp-webserver": "^0.1.1"
+  }
+}
