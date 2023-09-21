@@ -5,6 +5,7 @@ let config = {
     port:4000,
     resources:{
         react:true,
+        view:true,
         root:path.join(__dirname,'resources')
     }
 }
