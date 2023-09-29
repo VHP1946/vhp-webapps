@@ -1,6 +1,6 @@
 
 import {ObjList} from 'https://www.vhpportal.com/repo/tools/vg-lists.js';
-import {SENDrequestapi} from 'https://www.vhpportal.com/repo/apis/vapi/vapicore.js';
+import {SENDrequestapi} from '../javascript/tools/vapicore.js';
 /*
 SENDrequestapi({
   collect:'apps',

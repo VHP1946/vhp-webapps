@@ -7,7 +7,7 @@ import {STARTloadscreen} from 'https://www.vhpportal.com/repo/tools/vhc-loadscre
 import { checklistss, setupChecklist} from '/Tech/javascript/checklists/checklist-data.js';
 import { GETcss } from '/Tech/javascript/tools/getcss.js';
 import { ServiceSystemSummary } from '/Tech/javascript/controllers/ticket/service-system-summary.js';
-import {SENDrequestapi} from 'https://www.vhpportal.com/repo/apis/vapi/vapicore.js';
+import {SENDrequestapi} from '../../tools/vapicore.js';
 import { gradedescr } from "/Tech/javascript/checklists/checklist-descr.js";
 //setup emailing vars
 

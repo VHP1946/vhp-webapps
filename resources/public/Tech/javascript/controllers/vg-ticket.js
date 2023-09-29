@@ -8,7 +8,7 @@ import { ServicePresentation } from '/Tech/javascript/controllers/ticket/service
 
 import {STARTloadscreen} from 'https://www.vhpportal.com/repo/tools/vhc-loadscreen.js'//http://3.15.144.193/repo/tools/vhc-loadscreen.js';
 
-import { SENDrequestapi } from 'https://www.vhpportal.com/repo/apis/vapi/vapicore.js';
+import { SENDrequestapi } from '../tools/vapicore.js';
 import { ServiceSystemSummary } from '/Tech/javascript/controllers/ticket/service-system-summary.js';
 
 let publicfolder = '/Tech/bin/css'; //not sure we need
