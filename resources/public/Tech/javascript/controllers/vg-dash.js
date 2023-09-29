@@ -1,4 +1,4 @@
-import {SENDrequestapi} from 'https://www.vhpportal.com/repo/apis/vapi/vapicore.js';
+import {SENDrequestapi} from '../tools/vapicore.js';
 
 import {wolstore} from '/Tech/store/lstore.js';
 
