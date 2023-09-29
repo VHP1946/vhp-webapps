@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/VHP1946/vhp-webapps#readme",
   "dependencies": {
-    "vhp-webserver": "^0.1.1"
+    "vhp-webserver": "^0.1.2"
   }
 }

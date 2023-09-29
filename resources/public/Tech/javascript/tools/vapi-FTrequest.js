@@ -1,5 +1,5 @@
 
-import * as japi from 'https://www.vhpportal.com/repo/apis/vapi/vapi-jmart.js';
+import * as japi from './vapi-jmart.js';
 import {aserviceticket} from 'https://www.vhpportal.com/repo/ds/tickets/vogel-serviceticket.js';
 import {DropNote} from 'https://www.vhpportal.com/repo/modules/vg-dropnote.js';
 
