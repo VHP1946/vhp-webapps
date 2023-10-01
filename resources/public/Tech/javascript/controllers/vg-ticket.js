@@ -48,6 +48,7 @@ window.SAVEticket = (final=false)=>{
 			STARTloadscreen(document.getElementsByClassName('vhc-save-load-screen')[0],()=>{
 				return new Promise((resolve,reject)=>{
 					window.opener.techwos.UPDATEstore(currticket).then(answr=>{
+						console.log(answr)
 					if(answr) {
 						DropNote('tr','Ticket WAS Saved','green');
 						window.askToClose = false;

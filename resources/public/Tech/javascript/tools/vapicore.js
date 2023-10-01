@@ -75,9 +75,9 @@ export var SENDrequestapi = (pack,route='LOGIN',{
     }
     console.log('SENDING REQUEST->',request);
     fetch(url+route,options)
-    .then(response=>{return response.json()})
+    .then(response=>{console.log("RESPONSE",response);return response.json()})
     .then(data=>{console.log('Response Data>',data);return res(data);})
-    .catch(err=>{return res(false);})
+    .catch(err=>{console.log(err);return res(false);})
   });
 }
 
@@ -102,8 +102,12 @@ export var SENDrequest = (pack,request='mart',url=VAPIhost)=>{
     }
     fetch(url,options)
     .then(response=>{return response.json()})
-    .then(data=>{return res(data);})
-    .catch(err=>{return res(false);})
+    .then(data=>{
+		console.log(data)
+		return res(data);})
+    .catch(err=>{console.log(err, "ERROR")
+		return res(false);
+	})
   });
 }
 

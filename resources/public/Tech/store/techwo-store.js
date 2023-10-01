@@ -24,6 +24,7 @@ export class TechLocalWos extends ObjList{
   }
   UPDATEstore(item){
     return new Promise((resolve,reject)=>{
+		console.log("UPDAT STORE")
       SENDrequestapi({
         collect:'apps',
         store:'VFT',
@@ -45,6 +46,7 @@ export class TechLocalWos extends ObjList{
                 options:{}
               }
             },'OLDSTORE',{request:'mart'}).then(answr=>{
+				console.log(answr)
               let success=false;
               if(!answr.body.result.err){success=true;}
               if(this.TRIMlist({id:item.id}).length==0){this.list.unshift(item);}
@@ -53,6 +55,7 @@ export class TechLocalWos extends ObjList{
             })
           }
           else{
+			console.log("we are here")
             SENDrequestapi({
               collect:'apps',
               store:'VFT',
