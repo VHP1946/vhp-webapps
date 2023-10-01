@@ -23,7 +23,7 @@ var fbdbsetup =(db)=>{
     db:'flbook',
     method:'query',
     options:{query:{}}
-  },'STORE',{request:'mart'}).then(
+  },'OLDSTORE',{request:'mart'}).then(
     answr=>{
       //console.log(answr);
       if(answr.success){
@@ -46,7 +46,7 @@ fbstore.REFRESHstore=function(){
       db:'flbook',
       method:'query',
       options:{query:{}}
-    },'STORE',{request:'mart'}).then(
+    },'OLDSTORE',{request:'mart'}).then(
       list=>{
         //console.log('LIST',list);
         if(list.success){

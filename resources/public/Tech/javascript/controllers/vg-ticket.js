@@ -103,7 +103,7 @@ window.REFRESHdescr = () => {
 			option:'download',
 			template:'WO_DescriptionOfWork_tbl',
 			where:[{OP:'=',WorkOrderNumber:currticket.wo.id}]
-		},'STORE',{request:'jmart'}).then( //bring in descriptions
+		},'OLDSTORE',{request:'jmart'}).then( //bring in descriptions
 		  	answr=>{
 				console.log('JAPI->recieved description of work', answr);
 				if(answr.body.success){

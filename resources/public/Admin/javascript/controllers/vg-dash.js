@@ -18,13 +18,6 @@ import {STARTloadscreen} from 'https://www.vhpportal.com/repo/tools/vhc-loadscre
 */
 
 
-SENDrequestapi({},'LOGIN',{
-  user:'MURRY',
-  pswrd:'vogel123'
-}).then(
-  answr=>{console.log('TEST call',answr)}
-)
-
 var qactions = {
 };
 var mactions = {

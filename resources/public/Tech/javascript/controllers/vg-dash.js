@@ -55,12 +55,6 @@ var datamart=null;
 
 
 
-SENDrequestapi({},'LOGIN',{
-  	user:'MURRY',
-  	pswrd:'vogel123'
-}).then(
-  	answr=>{console.log('TEST call',answr)}
-)
 STARTloadscreen(document.getElementsByClassName('vhc-load-screen')[0],()=>{
 	return new Promise((resolve,reject)=>{
 		manlist.INITmanagelist().then(

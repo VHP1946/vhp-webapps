@@ -30,7 +30,7 @@ export class TechLocalWos extends ObjList{
         db:'techwos',
         method:'query',
         options:{query:{id:item.id}}
-      },'STORE',{request:'mart'}).then(
+      },'OLDSTORE',{request:'mart'}).then(
         found=>{
           if(found.success&&found.body.result.length===1){
             SENDrequestapi({
@@ -43,7 +43,7 @@ export class TechLocalWos extends ObjList{
                 update:{$set:item},
                 options:{}
               }
-            },'STORE',{request:'mart'}).then(answr=>{
+            },'OLDSTORE',{request:'mart'}).then(answr=>{
               let success=false;
               if(!answr.body.result.err){success=true;}
               if(this.TRIMlist({id:item.id}).length==0){this.list.unshift(item);}
@@ -60,7 +60,7 @@ export class TechLocalWos extends ObjList{
               options:{
                 docs:item
               }
-            },'STORE',{request:'mart'}).then(answr=>{
+            },'OLDSTORE',{request:'mart'}).then(answr=>{
               let success=false;
               if(!answr.body.result.err){success=true;}
               if(this.TRIMlist({id:item.id}).length==0){this.list.unshift(item);}
@@ -95,7 +95,7 @@ export class TechLocalWos extends ObjList{
         ...this.vpack,
         method:'query',
         options:{query:{tech:tech,mobile:true}}
-      },'STORE',{request:'mart'}).then(
+      },'OLDSTORE',{request:'mart'}).then(
         answr=>{
           let success=false;
           console.log(answr);
@@ -121,7 +121,7 @@ export class TechLocalWos extends ObjList{
               update:{$set:this.list[x]},
               options:{}
             }
-        },'STORE',{request:'mart'}).then(
+        },'OLDSTORE',{request:'mart'}).then(
           answr=>{
           }
         )
@@ -139,7 +139,7 @@ export class TechLocalWos extends ObjList{
         db:'techwos',
         method:'query',
         options:{query:{id:id}}
-      },'STORE',{request:'mart'}).then(
+      },'OLDSTORE',{request:'mart'}).then(
         result=>{
           if(result.success && result.body.result.length===1){
             return resolve(result.body.result[0])
