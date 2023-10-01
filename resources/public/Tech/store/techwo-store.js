@@ -32,6 +32,7 @@ export class TechLocalWos extends ObjList{
         options:{query:{id:item.id}}
       },'OLDSTORE',{request:'mart'}).then(
         found=>{
+			console.log(found)
           if(found.success&&found.body.result.length===1){
             SENDrequestapi({
               collect:'apps',
