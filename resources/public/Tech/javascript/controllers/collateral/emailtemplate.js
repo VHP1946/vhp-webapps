@@ -43,7 +43,7 @@ export class EmailForm {
           <p>Thank you for allowing our company a chance to service the AIR your Family experiences where you live, breathe, sleep and spend time together!</p>
           <p>Our technician prepared this invoice, summary of recommendations, and system diagnostic report for your records.</p>
           <p>Please feel free to reach out to us if you have any questions by calling 314-351-2533 opt. 2</p>
-          <p>Thank you again for choosing our company.   We trust that we’ve delivered the best possible comfort for you and your home.  Please consider sharing your experience with us by leaving a <a href="http://search.google.com/local/writereview?placeid=ChIJNWbEZtzU3ocRUMVCWy7ldq4">review.</a></p>
+          <p>Thank you again for choosing our company.   We trust that we’ve delivered the best possible comfort for you and your home.  Please consider sharing your experience with us by leaving a <a href="https://g.page/r/CRpuqdowaLb5EBM/review">review.</a></p>
           <a href="https://www.vogelheating.com/">Vogel Heating & Cooling</a>
         </td></tr>
         </table></td></tr>

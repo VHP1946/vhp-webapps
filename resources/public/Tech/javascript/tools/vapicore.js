@@ -57,6 +57,7 @@ export var SENDrequestapi = (pack,route='LOGIN',{
   request='',
   coid='01'
 },url=VHPhost+'api/')=>{
+	console.log("PACK", pack)
   return new Promise((res,rej)=>{
     let options={
       method:'POST',

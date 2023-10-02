@@ -103,7 +103,34 @@ document.getElementById('email-collateral').addEventListener('dblclick',(ele)=>{
 		})*/
 		return new Promise((resolve,reject)=>{
 			console.log("start load screen")
+			let attach = {
+				html:[emailcontent.invoice],//this.state.ticket.documents[0].html,
+				css:GETcss(),
+				filename:'Service Ticket: ' + ticket.wo.id
+			}
 			SENDrequestapi({
+				to:[document.getElementById('email-input').value],//email
+				cc:[],
+				bcc:"christianv@vogelheating.com",
+				from:"yourhomereport",
+				subject:'Home Comfort Report - WO #' + ticket.wo.id,
+				body:emailform.GETcontent(),
+				attach:[attach]
+			},
+			'MAILSERVER',{request:'MAIL'}).then(
+				answer=>{
+					console.log(answer, "email")
+					if (answer.msg == "Mail sent") {
+						DropNote('tr', 'Mail sent!', 'green')
+						DropNote('tr', 'Remind customer to check spam', 'green')
+						return(resolve(true))
+					} else {
+						DropNote('tr', answer.msg, 'red', false)
+						return(resolve(true))
+					}
+				}
+			)
+			/*SENDrequestapi({
 				to:document.getElementById('email-input').value,
 				subject:'Home Comfort Report - WO #' + ticket.wo.id,
 				html:emailform.GETcontent(),
@@ -120,7 +147,7 @@ document.getElementById('email-collateral').addEventListener('dblclick',(ele)=>{
 						return(resolve(true))
 					}
 				}
-			);
+			);*/
 		}).then(answr=>{
 			console.log(answr);
 			return(true)
